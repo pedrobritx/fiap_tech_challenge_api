@@ -15,7 +15,7 @@ export class AuthGuard implements CanActivate {
     private configService: ConfigService,
   ) {}
 
-  private extraiToken(request: Request) {
+  private extractToken(request: Request) {
     const [type, token] = request.headers.authorization?.split(' ') ?? [];
 
     return type === 'Bearer' ? token : null;
@@ -23,15 +23,19 @@ export class AuthGuard implements CanActivate {
 
   async canActivate(context: ExecutionContext): Promise<boolean> {
     const request = context.switchToHttp().getRequest();
-    const token = this.extraiToken(request);
+    const token = this.extractToken(request);
 
     if (!token) {
       throw new UnauthorizedException();
     }
 
     try {
+      const jwtSecret = this.configService.get<string>('JWT_SECRET');
+      if (!jwtSecret) {
+        throw new UnauthorizedException('JWT secret is not configured');
+      }
       const payload = await this.jwtService.verifyAsync(token, {
-        secret: this.configService.get<string>('JWT_SECRET'),
+        secret: jwtSecret,
       });
 
       request['user'] = payload;
