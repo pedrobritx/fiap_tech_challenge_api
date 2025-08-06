@@ -49,7 +49,7 @@ A API implementa todos os requisitos funcionais e técnicos do FIAP Tech Challen
 
 ### Variáveis de ambiente
 
-Crie um arquivo `.env` om base em `.env.example` e preencha as variáveis abaixo:
+Crie um arquivo `.env` com base em `.env.example` e preencha as variáveis abaixo:
 
 - `DB_HOST` – host do banco de dados
 - `DB_PORT` – porta do banco de dados
