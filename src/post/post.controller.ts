@@ -15,7 +15,7 @@ import { UuidValidationPipe } from '../common/pipes/uuid-validation.pipe';
 import { PostService } from './post.service';
 import { ListPostsDTO } from './dto/ListaPosts.dto';
 import { CriaPostDTO } from './dto/CriaPostDTO';
-import { AuthGuard } from 'src/guards/auth.guard';
+import { AuthGuard } from '../guards/auth.guard';
 import { PostPorIdDTO } from './dto/PostPorId.dto';
 import { EditaPostDTO } from './dto/EditaPostDTO';
 import {

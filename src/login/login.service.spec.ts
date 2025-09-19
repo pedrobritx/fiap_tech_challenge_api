@@ -4,7 +4,7 @@ import { UsuarioService } from '../usuario/usuario.service';
 import { JwtService } from '@nestjs/jwt';
 import { UnauthorizedException } from '@nestjs/common';
 import * as bcrypt from 'bcrypt';
-import { BuscaUsuarioPorEmailDTO } from 'src/usuario/dto/BuscaUsuarioPorEmail.dto';
+import { BuscaUsuarioPorEmailDTO } from '../usuario/dto/BuscaUsuarioPorEmail.dto';
 import { ConfigService } from '@nestjs/config';
 
 jest.mock('bcrypt');

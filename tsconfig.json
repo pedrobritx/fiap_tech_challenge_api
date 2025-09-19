@@ -19,6 +19,6 @@
     "strictBindCallApply": false,
     "noFallthroughCasesInSwitch": false
   },
-  "include": ["src/**/*"], // <- inclui src/db/**
+  "include": ["src/**/*"],
   "exclude": ["node_modules", "test", "**/*.spec.ts"]
 }

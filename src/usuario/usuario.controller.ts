@@ -10,7 +10,7 @@ import {
 import { CriaUsuarioDTO } from './dto/CriaUsuario.dto';
 import { UsuarioEntity } from './usuario.entity';
 import { UsuarioService } from './usuario.service';
-import { AuthGuard } from 'src/guards/auth.guard';
+import { AuthGuard } from '../guards/auth.guard';
 
 @Controller('/usuarios')
 export class UsuarioController {
